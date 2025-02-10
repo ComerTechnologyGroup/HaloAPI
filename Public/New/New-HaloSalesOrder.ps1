@@ -16,8 +16,8 @@
     )
     Invoke-HaloPreFlightCheck
     try {
-        if ($PSCmdlet.ShouldProcess($Quote -is [Array] ? 'SalesOrders' : 'SalesOrder', 'Create')) {
-            New-HaloPOSTRequest -Object $Quote -Endpoint 'salesorder'
+        if ($PSCmdlet.ShouldProcess($SalesOrder -is [Array] ? 'SalesOrders' : 'SalesOrder', 'Create')) {
+            New-HaloPOSTRequest -Object $SalesOrder -Endpoint 'salesorder'
         }
     } catch {
         New-HaloError -ErrorRecord $_
